@@ -1,8 +1,8 @@
-# Vertical SuperSampling Instructions are [here.](https://diffusingerror.blogspot.com/2025/12/guide-vertical-super-sampling-3d-anti.html)
+## Vertical SuperSampling Instructions are [here.](https://diffusingerror.blogspot.com/2025/12/guide-vertical-super-sampling-3d-anti.html)
 
 
 
-# VSB Migration Scripts
+## VSB Migration Scripts
 
 This directory contains C# scripts for UVTools, migrating functionality from Voxel-Stack-Blender (VSB) and adding new features.
 
