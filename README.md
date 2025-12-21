@@ -1,4 +1,4 @@
-## Vertical SuperSampling Instructions are [here.](https://diffusingerror.blogspot.com/2025/12/guide-vertical-super-sampling-3d-anti.html)
+## Vertical SuperSampling Instructions are [here.](https://github.com/aaron1138/UVTools-Scripts/blob/main/Vertical-SuperSampling-Instructions.md)
 
 
 
