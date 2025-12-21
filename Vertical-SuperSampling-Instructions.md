@@ -7,7 +7,7 @@
 6) Save and get the slice file to the printer.
 
 ## Tools you will need:
-- Slicer of choice.  Recommend Chitubox for speed or PrusaSlicer for the extra fidelity.
+- Slicer of choice.  Recommend Chitubox for speed or PrusaSlicer for a little extra fidelity.
 - UVTools 
 - The UVTools scripts & LUT presets in this repo
   - Code -> Download Zip then unzip the downloaded folder.
