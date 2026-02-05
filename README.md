@@ -1,4 +1,5 @@
 ## Vertical SuperSampling Instructions are [here.](https://github.com/aaron1138/UVTools-Scripts/blob/main/Vertical-SuperSampling-Instructions.md)
+## [Examples from vertical supersampling.](https://imgur.com/a/vertical-supersampler-3d-antialiasing-msla-resin-prints-YH2rJ6e)
 
 
 
