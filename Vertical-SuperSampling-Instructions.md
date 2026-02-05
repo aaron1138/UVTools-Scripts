@@ -1,3 +1,5 @@
+## [Examples from vertical supersampling.](https://imgur.com/a/vertical-supersampler-3d-antialiasing-msla-resin-prints-YH2rJ6e)
+
 ## Big Picture Steps:
 1) Slice a model at an integer divisor of your layer height. For these examples I will use 5um slices for 40um print.  Recommend 5um as a good starting point. 
 2) Collapse the layers to print height using averaging to bring in the most vertical gradient data. The first super sampling.
