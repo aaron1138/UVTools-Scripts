@@ -1,4 +1,4 @@
-## [Examples from vertical supersampling.](https://imgur.com/a/vertical-supersampler-3d-antialiasing-msla-resin-prints-YH2rJ6e)
+## [Examples of vertical supersampling.](https://imgur.com/a/vertical-supersampler-3d-antialiasing-msla-resin-prints-YH2rJ6e)
 
 ## Big Picture Steps:
 1) Slice a model at an integer divisor of your layer height. For these examples I will use 5um slices for 40um print.  Recommend 5um as a good starting point. 
@@ -6,7 +6,7 @@
 3) Sample in the layers above and below to blend additional grayscale and create vertically smooth transitions. 
 4) Apply a remapping of the grayscale values to ones which produce fractional layer heights when printed. AKA lookup table / LUT. 
 5) For < 8-bit grayscale printers, apply dithering. 16k printers - 3-bit grayscale, Anycubic - 4-bit grayscale.
-6) Save and get the slice file to the printer.
+6) Save resulting slice file and send it to the printer.
 
 ## Tools you will need:
 - Slicer of choice.  Recommend Chitubox for speed or PrusaSlicer for a little extra fidelity.
@@ -26,11 +26,11 @@
 
 ## Detailed Steps:
 ## Step 1: Slicing the print
-- Pick your multiplier.  Recommend at least 4-5 "sublayers" to build each print layer.  Better results will come all the way up to about 8, after which we get diminishing returns and significantly more computation overhead.  
+- Pick your multiplier.  Recommend at least 4-5 "sublayers" to build each print layer.  Better results will come all the way up to about 8, after which we get diminishing returns and significantly more compute overhead.  
 - For our examples we will use a slicing layer height of 5um and a print layer height of 40um for a multiplier of 8x. 
-- For this method, great print results start around 40um. 30um is a little better and retains more sharpness.  
+- For this method, good print results start around 40um. 30um is a bit better and retains more sharpness.  
 - 50um layers are possible, but more difficult to get grayscale to "stick" and accumulate.
-- Setup a slicing profile with a layer height of 5um / 0.005mm in your slicer.  Chitubox may give you a warning icon, but it will still do what is configured.  Satellite will give some warnings.  Have not tested Lychee, I would not trust it myself.
+- Setup a slicing profile with a layer height of 5um / 0.005mm in your slicer.  PrusaSlicer produces the most accurate baseline 2D AA due to an analytic pixel occupancy check for AA grayscale. Chitubox may give you a warning icon, but it will still do what is configured.  Satellite will give some warnings.  I have not tested Lychee, and would not trust its output.
   - (Optional) Configure anti-aliasing.  Chitubox - use Anti-aliasing Level 2/4/8 or Grayscale Level 0-9 (these are all identical output at 12/16k in Chitubox 2.x).  
   - Do not use Image Blur unless you are going the Step 2 route without "Option A" and need anti-aliasing for surfaces nearly vertical to the build plate. In that case, a blur of 2-3 should be more than enough. Only have found this necessary so far with Dennys Wang's Ultimate AA test. 
   - Step 2 (Option A) applies a pyramid down / up sampling which produces more than enough XY blur. 
@@ -40,7 +40,7 @@
 ## Step 2A (Option A): Collapse the layers
 (faster* + more smoothing + couple extra steps)
 
-Option A uses UVTools built-in layer re-height first and then performs the Out of Box sampling at print layer height.  The UVTools layer re-height will apply a pyramid down and pyramid up blur filter when averaging layers which is technically very lossy, but it does provide significantly smoother anti-aliasing to near vertical surfaces and is a much faster process. 
+Option A uses UVTools built-in layer re-height first and then performs the Out of Box sampling at print layer height.  The UVTools layer re-height will apply a pyramid down and pyramid up blur filter when averaging layers which is technically very lossy, but it does provide significantly smoother anti-aliasing to near vertical surfaces and is a faster process. 
 - Open the 5um slice file in UVTools.
 - At the top right go to Actions -> Clone Layers. Choose the top or bottom layer and clone it enough times to make the total layer count evenly divisible by the multiplier, in this example 8 (skip this step if it is already evenly divisible).
 - Cloning the bottom layer will thicken the rafts just a tad and is usually safest.
