@@ -8,6 +8,7 @@
 This directory contains C# scripts for UVTools, migrating functionality from Voxel-Stack-Blender (VSB) and adding new features.
 
 ## Script: Advanced Border Fader ('Adv SDF Border Fader v06 (ROI).cs')
+## [Border Fader Example.]([https://imgur.com/a/ZLXztkg](https://imgur.com/a/uvtools-adv-border-fader-v06-example-1-ZLXztkg)
 
 **Purpose:** Creates a grayscale "moat" at the model edge and around holes and concavities to reduce light bleed closing of features.
 
