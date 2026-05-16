@@ -7,6 +7,21 @@
 
 This directory contains C# scripts for UVTools, migrating functionality from Voxel-Stack-Blender (VSB) and adding new features.
 
+## Script: Advanced Border Fader ('Adv SDF Border Fader v06 (ROI).cs')
+
+**Purpose:** Creates a grayscale "moat" at the model edge and around holes and concavities to reduce light bleed closing of features.
+
+**UI Options:**
+- **Existing Grayscale Preservation (2x SDF)** Will exclude existing grayscale gradients / blur for existing AA or phased application.
+- **Enable Interior Fade** The default fade which will reduce light bleed around concavities by reducing pixel values at the model edge according the the Interior LUT.
+- **Enable Exterior Fade** This adds a fade or border to the black pixels surrounding a model for creating support / registration brightness.  This will close concavities if used with a low *Ext. Protect Scale* value.
+- **Protect Thin Walls** This prevents fading the border inward on both sides of a thin wall.  Uses the *Int. Protect Scale* to determine distance for thin walls.
+- **Interior Distance (px):** The distance to fade inward from the model edge.  Distance scales by the lower pixel dimension with anisotropic (12/14/16k) printers.  
+- **Interior LUT (0-255):** The list of values working from the exterior model edge inward to set pixels. Recommend having +1 value more than distance for full interpolation on curves and turns.
+- **Exterior Distance & LUT** Same as interior but the list order works from the model edge outward into black surrounding pixels.
+- **Absolute/Interpolated** (toggle) The grayscale LUT can be applied as exact values or a curve interpolated from provided values.  Interpolated is usefull for defining a curve start to finish from 2-3 values and then using a much wider distance (px) setting. 
+
+
 ## Script: Enhanced EDT Blending (`ScriptEnhancedEDT.cs` & `ScriptEnhancedEDTParallel.cs`)
 
 **Purpose:** Anti-aliasing along the Z-axis using an Enhanced Euclidean Distance Transform. Smooths transitions between layers.
