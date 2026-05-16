@@ -11,6 +11,7 @@ This directory contains C# scripts for UVTools, migrating functionality from Vox
 ## [Border Fader Example.](https://imgur.com/a/uvtools-adv-border-fader-v06-example-1-ZLXztkg)
 
 **Purpose:** Creates a grayscale "moat" at the model edge and around holes and concavities to reduce light bleed closing of features.
+- **Warning:** As this reduces exposure as a distance function from the model edge, it **will** weaken supports, especially smaller attachment tips. 
 
 **UI Options:**
 - **Existing Grayscale Preservation (2x SDF)** Will exclude existing grayscale gradients / blur for existing AA or phased application.
